@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: moel-mes <moel.mes.1337@gamil.com>         +#+  +:+       +#+         #
+#    By: moel-mes <moel-mes@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/25 03:53:51 by moel-mes          #+#    #+#              #
-#    Updated: 2024/10/27 15:51:06 by moel-mes         ###   ########.fr        #
+#    Updated: 2024/10/28 12:48:03 by moel-mes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=GCC
-FLAGS= -Wall -Werror -Wextra -I libft.h
-AR=ar crs
-RM=rm -rf
-FILES= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_strlen \
+CC	= cc
+FLAGS	= -Wall -Werror -Wextra -I libft.h
+AR	= ar crs
+RM	= rm -rf
+FILES	= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_strlen \
 	   ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp \
 	   ft_strnstr ft_strlcpy ft_strlcat ft_atoi ft_strdup \
 	   ft_substr ft_strjoin ft_split ft_itoa ft_strmapi \
@@ -27,18 +27,18 @@ BFILES  = ft_lstnew_bonus ft_lstadd_front_bonus \
 OBJ=$(FILES:=.o)
 BOBJ=$(BFILES:=.o)
 NAME=libft.a
-
+LIB=libft.h
 .PHONY: all bonus clean fclean re
 
-all: $(NAME)
+all: $(NAME) 
 
-bonus: all $(BOBJ)
+bonus: $(BOBJ)
 	$(AR) $(NAME) $(BOBJ)
 
-$(NAME): $(OBJ)
+$(NAME): $(LIB) $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
-%.o: %.c libft.h
+%.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
