@@ -1,18 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: moel-mes <moel-mes@student.1337.ma>        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/25 03:53:51 by moel-mes          #+#    #+#              #
-#    Updated: 2024/10/28 12:48:03 by moel-mes         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 CC	= cc
-FLAGS	= -Wall -Werror -Wextra -I libft.h
-AR	= ar crs
+CFLAGS	= -Wall -Werror -Wextra -I libft.h
+AR	= ar rs
 RM	= rm -rf
 FILES	= ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_strlen \
 	   ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp \
@@ -28,18 +16,14 @@ OBJ=$(FILES:=.o)
 BOBJ=$(BFILES:=.o)
 NAME=libft.a
 LIB=libft.h
-.PHONY: all bonus clean fclean re
 
-all: $(NAME) 
+all: $(NAME)
 
 bonus: $(BOBJ)
 	$(AR) $(NAME) $(BOBJ)
 
 $(NAME): $(LIB) $(OBJ)
 	$(AR) $(NAME) $(OBJ)
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(BOBJ)
@@ -48,3 +32,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: re clean fclean bonus all
