@@ -34,3 +34,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: re clean fclean bonus all
+.SECONDARY: $(OBJ)
