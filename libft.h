@@ -6,7 +6,7 @@
 /*   By: moel-mes <moel-mes@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:49:58 by moel-mes          #+#    #+#             */
-/*   Updated: 2024/11/12 10:38:17 by moel-mes         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:10:59 by moel-mes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t len);
-int					ft_strlen(const char *str);
+size_t					ft_strlen(const char *str);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *big, const char *little,

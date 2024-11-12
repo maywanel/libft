@@ -6,13 +6,15 @@
 /*   By: moel-mes <moel-mes@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 23:05:32 by moel-mes          #+#    #+#             */
-/*   Updated: 2024/10/28 12:49:19 by moel-mes         ###   ########.fr       */
+/*   Updated: 2024/11/12 11:11:07 by moel-mes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
