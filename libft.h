@@ -13,9 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -39,7 +39,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t len);
-size_t					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *big, const char *little,
@@ -71,13 +71,13 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
 //-------ft_printf--------------------------------------------------------//
-int	ft_printf(const char *format, ...);
-int	numbr_len(unsigned int n, int base);
-int	ft_putstr(char *str);
-int	ft_putchar(char c);
-int	ft_putnbr(int n);
-int	print_p(void *ptr);
-int	print_hex(unsigned long u, char c);
-int	ft_print_u(unsigned int u);
+int					ft_printf(const char *format, ...);
+int					numbr_len(unsigned int n, int base);
+int					ft_putstr(char *str);
+int					ft_putchar(char c);
+int					ft_putnbr(int n);
+int					print_p(void *ptr);
+int					print_hex(unsigned long u, char c);
+int					ft_print_u(unsigned int u);
 
 #endif
